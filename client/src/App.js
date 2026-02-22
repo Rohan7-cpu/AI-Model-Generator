@@ -13,7 +13,7 @@ function App() {
     const formData = new FormData();
     formData.append("file", file);
 
-    const res = await fetch("http://localhost:5000/process-file", {
+    const res = await fetch("https://ai-model-generator.onrender.com/process-file", {
       method: "POST",
       body: formData,
     });
@@ -26,7 +26,7 @@ function App() {
   const generateAnswer = async () => {
     setLoading(true);
 
-    const res = await fetch("http://localhost:5000/generate-answer", {
+    const res = await fetch("https://ai-model-generator.onrender.com/generate-answer", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ question, fileToken, email }),
